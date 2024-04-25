@@ -1,4 +1,4 @@
-{% set version = '1.4.4' %}
+{% set version = "1.4.5" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,12 +10,12 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/xslt_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/xslt/xslt_{{ version }}.tar.gz
-  sha256: 64aacaff2dacb474c3abe2e91589676f8741981011ca7fc35b814e0ceb884c31
+  sha256: b3e3a7cd3496d3d5444ab6f1e94526827098c8f02580fb44248437a274a9740d
 
 build:
-  merge_build_host: True  # [win]
-  skip: True  # [win]
-  number: 2
+  merge_build_host: true  # [win]
+  skip: true  # [win]
+  number: 0
   rpaths:
     - lib/R/lib/
     - lib/
@@ -23,7 +23,9 @@ build:
 requirements:
   build:
     - {{ compiler('c') }}          # [not win]
+    - {{ stdlib("c") }}            # [not win]
     - {{ compiler('m2w64_c') }}    # [win]
+    - {{ stdlib("c") }}            # [win]
     - {{ compiler('cxx') }}        # [not win]
     - {{ compiler('m2w64_cxx') }}  # [win]
     - {{ posix }}filesystem        # [win]
@@ -62,8 +64,7 @@ about:
   home: https://ropensci.r-universe.dev/xslt
   doc_url: https://docs.ropensci.org/xslt/
   license: GPL-2.0-or-later
-  summary: An extension for the 'xml2' package to transform XML documents by applying an 'xslt'
-    style-sheet.
+  summary: An extension for the 'xml2' package to transform XML documents by applying an 'xslt' style-sheet.
   license_family: GPL2
   license_file:
     - {{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-2
