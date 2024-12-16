@@ -12,7 +12,7 @@ source:
   sha256: 702709c741e5e15a805a19624982a91029274988b507d7bee91a2267ad4a6a97
 
 build:
-  number: 0
+  number: 1
   rpaths:
     - lib/R/lib/
     - lib/
@@ -47,7 +47,7 @@ requirements:
     - libiconv                     # [win]
     - libxml2
     - libxslt
-    - xz                           # [osx]
+    - liblzma-devel                           # [osx]
     - zlib                         # [win]
   run:
     - r-base
