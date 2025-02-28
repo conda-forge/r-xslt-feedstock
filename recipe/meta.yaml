@@ -1,4 +1,4 @@
-{% set version = "1.5.0" %}
+{% set version = "1.5.1" %}
 {% set posix = 'm2-' if win else '' %}
 
 package:
@@ -9,7 +9,7 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/xslt_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/xslt/xslt_{{ version }}.tar.gz
-  sha256: 702709c741e5e15a805a19624982a91029274988b507d7bee91a2267ad4a6a97
+  sha256: 8aa8af768eba0c719f6de04df137f584ec27dcf1c92d10a9b0cebb51c7aeff94
 
 build:
   number: 0
