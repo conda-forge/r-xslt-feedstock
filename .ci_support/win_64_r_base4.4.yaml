@@ -9,7 +9,7 @@ cran_mirror:
 libiconv:
 - '1'
 libxml2:
-- '2'
+- '2.13'
 m2w64_c_compiler:
 - gcc
 m2w64_c_compiler_version:
